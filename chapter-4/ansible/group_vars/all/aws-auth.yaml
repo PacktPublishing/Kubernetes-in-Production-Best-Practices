@@ -1,0 +1,8 @@
+map_roles:
+  workers_roles:
+    - "{{ worker_iam_role_arn }}"
+  system_masters: []
+map_users:
+  system_masters:
+    - arn: "arn:aws:iam::111111111111:user/admin"
+      name: "admin"

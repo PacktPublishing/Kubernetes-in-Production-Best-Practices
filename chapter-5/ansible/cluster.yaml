@@ -1,0 +1,30 @@
+---
+- name: deploy k8s add-ons
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+    k8s_kubeconfig: ~/.kube/config
+    k8s_manifests_base_dir: templates/
+    k8s_manifests_state: present
+    k8s_force: false
+    k8s_no_log: false
+    
+  tasks:
+  - import_tasks: tasks/aws-auth.yaml
+    tags: aws-auth
+  - import_tasks: tasks/namespaces.yaml
+    tags: namespaces
+  - import_tasks: tasks/cni.yaml
+    tags: cni
+  - import_tasks: tasks/kube-proxy.yaml
+    tags: kube-proxy
+  - import_tasks: tasks/core-dns.yaml
+    tags: core-dns
+  - import_tasks: tasks/external-dns.yaml
+    tags: external-dns
+  - import_tasks: tasks/ingress-nginx.yaml
+    tags: ingress-nginx
+
