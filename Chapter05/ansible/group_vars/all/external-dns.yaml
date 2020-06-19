@@ -1,0 +1,9 @@
+log_level: error
+provider: aws
+aws_zone_type: private
+interval: 1m
+route53_zone_id: Z09817802WZ9HZYSUI2RE
+external_dns_replicas: 2
+external_dns:
+  image: "registry.opensource.zalan.do/teapot/external-dns"
+  tag: "v0.5.9"

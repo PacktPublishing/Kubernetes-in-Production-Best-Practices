@@ -1,0 +1,12 @@
+{% for namespace in namespaces_list %}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ namespace.name }}
+  labels:
+    name: {{ namespace.name }}
+  annotations:
+    owner: {{ namespace.owner }}
+
+{% endfor %}

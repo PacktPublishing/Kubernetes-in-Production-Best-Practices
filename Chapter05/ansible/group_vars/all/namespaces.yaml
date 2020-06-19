@@ -1,0 +1,3 @@
+namespaces_list:
+- name: global-namespace
+  owner: global-admin
