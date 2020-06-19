@@ -1,5 +1,0 @@
-core_dns_replicas: 2
-dns_cluster_ip: 172.20.0.10
-core_dns:
-  image: "602401143452.dkr.ecr.us-east-1.amazonaws.com/eks/coredns"
-  tag: "v1.6.6"

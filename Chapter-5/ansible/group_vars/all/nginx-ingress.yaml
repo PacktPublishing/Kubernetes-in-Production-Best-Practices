@@ -1,6 +1,0 @@
-nginx_ingress_controller:
-  image: "quay.io/kubernetes-ingress-controller/nginx-ingress-controller"
-  tag: "0.32.0"
-nginx_ingress_webhook_certgen:
-  image: "jettech/kube-webhook-certgen"
-  tag: "v1.2.0"

@@ -1,5 +1,0 @@
-cni_warm_ip_target: 2
-cni_min_ip_target: 10
-aws_cni:
-  image: "602401143452.dkr.ecr.us-west-2.amazonaws.com/amazon-k8s-cni"
-  tag: "v1.6.2"

@@ -1,3 +1,0 @@
-kube_proxy:
-  image: "602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/kube-proxy"
-  tag: "v1.15.11"
