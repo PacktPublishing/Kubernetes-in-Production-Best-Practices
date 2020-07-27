@@ -1,0 +1,3 @@
+kube2iam:
+  image: "jtblin/kube2iam"
+  tag: "0.10.9"

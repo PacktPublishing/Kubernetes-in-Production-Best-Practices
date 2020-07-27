@@ -1,0 +1,49 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    # Let's Encrypt will use this to contact you about expiring
+    # certificates, and issues related to your account.
+    email: {{ letsencrypt_email }}
+    server: {{ letsencrypt_prod_url }}
+    privateKeySecretRef:
+      # Secret resource used to store the account's private key.
+      name: letsencrypt-prod
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+    - selector:
+        matchLabels:
+          use-dns01-solver: "true"
+      dns01:
+        route53:
+          region: {{ aws_default_region }}
+          hostedZoneID: {{ route53_zone_id }}
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-nonprod
+spec:
+  acme:
+    # Let's Encrypt will use this to contact you about expiring
+    # certificates, and issues related to your account.
+    email: {{ letsencrypt_email }}
+    server: {{ letsencrypt_nonprod_url }}
+    privateKeySecretRef:
+      # Secret resource used to store the account's private key.
+      name: letsencrypt-nonprod
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+    - selector:
+        matchLabels:
+          use-dns01-solver: "true"
+      dns01:
+        route53:
+          region: {{ aws_default_region }}
+          hostedZoneID: {{ route53_zone_id }}

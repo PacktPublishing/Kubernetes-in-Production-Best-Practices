@@ -1,0 +1,14 @@
+letsencrypt_email: security@packt.com
+letsencrypt_prod_url: https://acme-v02.api.letsencrypt.org/directory
+letsencrypt_nonprod_url: https://acme-staging-v02.api.letsencrypt.org/directory
+
+cert_manager_replicas: 1
+cert_manager_controller:
+  image: "quay.io/jetstack/cert-manager-controller"
+  tag: "v0.15.2"
+cert_manager_cainjector:
+  image: "quay.io/jetstack/cert-manager-cainjector"
+  tag: "v0.15.2"
+cert_manager_webhook:
+  image: "quay.io/jetstack/cert-manager-webhook"
+  tag: "v0.15.2"
