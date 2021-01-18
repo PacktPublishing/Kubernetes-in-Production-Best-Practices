@@ -1,0 +1,22 @@
+backend:
+  type: es
+  es:
+    host: elastic-es-http
+    port: 9200
+    # Optional username credential for Elastic X-Pack access
+    http_user: elastic
+    # Password for user defined in HTTP_User
+    http_passwd: ${ES_PASSWORD}
+    # Optional TLS encryption to ElasticSearch instance
+    tls: "on"
+    tls_verify: "off"
+parsers:
+  enabled: true
+  regex:
+    - name: log_parser
+      regex: ^(?<logtimestamp>[^ ]+) (?<stream>stdout|stderr) (?<logtag>[^ ]*) (?<log>.*)$
+      timeKey: logtimestamp
+      timeFormat: "%Y-%m-%dT%H:%M:%S.%L%z"
+input:
+  tail:
+    parser: log_parser
