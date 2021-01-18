@@ -1,0 +1,18 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: task-pod
+spec:
+  volumes:
+    - name: task-volume
+      persistentVolumeClaim:
+       claimName: percona-pvc
+  containers:
+    - name: task-container
+      image: mysql:5.6
+      ports:
+        - containerPort: 3306
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/var/lib/mysql"
+          name: task-volume

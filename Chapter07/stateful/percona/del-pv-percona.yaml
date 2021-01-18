@@ -1,0 +1,14 @@
+# pv-percona.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name : percona-pv1
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 5Gi
+  persistentVolumeReclaimPolicy: Retain
+  awsElasticBlockStore:
+    volumeID: vol-02e3dcd8919ea777b
+    fsType: xfs

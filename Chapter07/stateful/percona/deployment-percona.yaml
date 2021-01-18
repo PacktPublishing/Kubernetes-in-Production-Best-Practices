@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: percona
+spec:
+  selector:
+    matchLabels:
+      app: percona
+  template:
+    metadata:
+      labels:
+        app: percona
+    spec:
+      containers:
+      - image: percona:ps-8.0.15-5
+        name: percona
+        env:
+          # Use secret in production usage
+        - name: MYSQL_ROOT_PASSWORD
+          value: password
+        ports:
+        - containerPort: 3306
+          name: percona
+        volumeMounts:
+        - name: percona-volume
+          mountPath: /var/lib/mysql
+      volumes:
+        - name: percona-volume
+          persistentVolumeClaim:
+            claimName: percona-pvc
