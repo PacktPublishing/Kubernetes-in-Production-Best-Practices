@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: percona
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: percona
@@ -13,12 +14,19 @@ spec:
         app: percona
     spec:
       containers:
-      - image: percona:ps-8.0.15-5
+      - image: percona
         name: percona
+        args:
+          - "--ignore-db-dir"
+          - "lost+found"
         env:
           # Use secret in production usage
         - name: MYSQL_ROOT_PASSWORD
-          value: password
+          valueFrom:
+            secretKeyRef:
+              name: mysql-root
+              key: mysql-root-passwd
+#          value: password
         ports:
         - containerPort: 3306
           name: percona
