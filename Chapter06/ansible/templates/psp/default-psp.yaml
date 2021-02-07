@@ -1,6 +1,6 @@
 # Default restricted PSP with no local storage (hostPath)
 ---
-apiVersion: extensions/v1beta1
+apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
   name: default-psp

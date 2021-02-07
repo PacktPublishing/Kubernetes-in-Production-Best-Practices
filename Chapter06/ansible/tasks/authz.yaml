@@ -1,0 +1,14 @@
+- name: configure cluster rbac
+  k8s:
+    definition: "{{ item }}"
+    kubeconfig: "{{ k8s_kubeconfig }}"
+    state: "{{ k8s_manifests_state }}"
+    force: "{{ k8s_force }}"
+  loop: 
+    - "{{ lookup('template', k8s_manifests_base_dir + 'auth/authz.yaml') | from_yaml_all | list }}"
+  register: k8s_result
+  until: k8s_result is success
+  retries: 3
+  delay: 2
+  no_log: "{{ k8s_no_log }}"
+  

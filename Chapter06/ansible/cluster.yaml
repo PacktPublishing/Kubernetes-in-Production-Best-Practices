@@ -15,6 +15,8 @@
   tasks:
   - import_tasks: tasks/aws-auth.yaml
     tags: aws-auth
+  - import_tasks: tasks/authz.yaml
+    tags: authz
   - import_tasks: tasks/psp.yaml
     tags: psp
   - import_tasks: tasks/namespaces.yaml
@@ -31,8 +33,8 @@
     tags: ingress-nginx
   - import_tasks: tasks/kube2iam.yaml
     tags: kube2iam
-  - import_tasks: tasks/cert-manager.yaml
-    tags: cert-manager
+  #- import_tasks: tasks/cert-manager.yaml
+  #  tags: cert-manager
   - import_tasks: tasks/sealed-secrets.yaml
     tags: sealed-secrets
 

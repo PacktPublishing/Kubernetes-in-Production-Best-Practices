@@ -5,10 +5,7 @@ terraform {
     region         = "us-east-1"
     dynamodb_table = "packtclusters-vpc-terraform-state-lock-dynamodb"
   }
-  required_version = "~> 0.12.24"
-  required_providers {
-    aws = "~> 2.54"
-  }
+  required_version = "~> 0.12.28"
 }
 
 provider "aws" {
