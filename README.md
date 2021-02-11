@@ -4,7 +4,7 @@
 
 This is the code repository for [Kubernetes in Production Best Practices](https://www.packtpub.com/cloud-networking/kubernetes-in-production-best-practices?utm_source=github&utm_medium=repository&utm_campaign=9781800202450), published by Packt.
 
-**Build and manage highly available production-ready Kubernetes clusters**
+**Kubernetes Production Best Practices, published by Packt**
 
 ## What is this book about?
 Kubernetes in Production Best Practices is a blueprint and reference book for anyone who wants to leverage Kubernetes to manage their applications and services in production, following cloud industry standards, and applying best practices to achieve scaling, availability, operational excellence, and cost optimization.
