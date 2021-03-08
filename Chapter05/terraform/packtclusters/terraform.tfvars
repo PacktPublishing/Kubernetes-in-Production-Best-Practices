@@ -11,7 +11,7 @@ public_subnet_ids = [
 ]
 vpc_id = "vpc-xxxxxxxxxx"
 clusters_name_prefix  = "packtclusters"
-cluster_version       = "1.16"
+cluster_version       = "1.18"
 workers_instance_type = "t3.medium"
 workers_number_min    = 3
 workers_number_max    = 5
