@@ -1,7 +1,3 @@
-## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B16192?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
------
-For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
-
 # Kubernetes in Production Best Practices
 
 <a href="https://www.packtpub.com/cloud-networking/kubernetes-in-production-best-practices?utm_source=github&utm_medium=repository&utm_campaign=9781800202450"><img src="https://www.packtpub.com/media/catalog/product/cache/4cdce5a811acc0d2926d7f857dceb83b/9/7/9781800202450-original_92.jpeg" alt="Kubernetes in Production Best Practices" height="256px" align="right"></a>
