@@ -74,3 +74,7 @@ is a technologist and accomplished product leader with years of experience in th
 * [Kubernetes - A Complete DevOps Cookbook](https://www.packtpub.com/product/kubernetes-a-complete-devops-cookbook/9781838828042?utm_source=github&utm_medium=repository&utm_campaign=9781838828042)
 
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800202450">https://packt.link/free-ebook/9781800202450 </a> </p>
