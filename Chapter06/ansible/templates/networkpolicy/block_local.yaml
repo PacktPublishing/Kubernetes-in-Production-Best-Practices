@@ -1,14 +1,9 @@
-{% for project in k8s_projects %}
-{% for ns_env in project.environments %}
-{% set ns = project.name + '-' + ns_env -%}
-{% for np_namespace in networkpolicy_namespaces %}
-{% if np_namespace.name == ns  %}
 ---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: network-trusted
-  namespace: {{ ns }}
+  namespace: kube-system
 spec:
   podSelector:
     matchLabels:
@@ -24,7 +19,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: network-untrusted
-  namespace: {{ ns }}
+  namespace: kube-system
 spec:
   podSelector: {}
   policyTypes:
@@ -43,7 +38,7 @@ apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: allow-dns-only
-  namespace: {{ ns }}
+  namespace: kube-system
 spec:
   podSelector: {}
   policyTypes:
@@ -54,7 +49,3 @@ spec:
       protocol: UDP
     - port: 53
       protocol: TCP
-{% endif %}
-{% endfor %}
-{% endfor %}
-{% endfor %}
